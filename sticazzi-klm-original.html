@@ -6,20 +6,20 @@
     <title>KML Click Capture Sample</title>
     <style>
       html, body {
-        height: 800px;
-        padding: 6px;
-        margin: 0px;
+        height: 370px;
+        padding: 0;
+        margin: 0;
         }
       #map {
-       height: 800px;
-       width: 800px;
+       height: 360px;
+       width: 300px;
        overflow: hidden;
        float: left;
        border: thin solid #333;
        }
       #capture {
-       height: 800px;
-       width: 800px;
+       height: 360px;
+       width: 480px;
        overflow: hidden;
        float: left;
        background-color: #ECECFB;
@@ -32,30 +32,30 @@
     <div id="map"></div>
     <div id="capture"></div>
     <script>
-      let map;
-      let src = '/home/lorenzo/mapstest/sticazzi.kml';
+      var map;
+      var src = 'https://developers.google.com/maps/documentation/javascript/examples/kml/westcampus.kml';
 
       function initMap() {
         map = new google.maps.Map(document.getElementById('map'), {
-          center: new google.maps.LatLng(-37.871231, 145.245245),
-          zoom: 14,
+          center: new google.maps.LatLng(-19.257753, 146.823688),
+          zoom: 2,
           mapTypeId: 'terrain'
         });
 
-        let kmlLayer = new google.maps.KmlLayer(src, {
+        var kmlLayer = new google.maps.KmlLayer(src, {
           suppressInfoWindows: true,
           preserveViewport: false,
           map: map
         });
         kmlLayer.addListener('click', function(event) {
-          let content = event.featureData.infoWindowHtml;
-          let testimonial = document.getElementById('capture');
+          var content = event.featureData.infoWindowHtml;
+          var testimonial = document.getElementById('capture');
           testimonial.innerHTML = content;
         });
       }
     </script>
     <script async defer
-    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDbnfYZa0nQUwlGTtTuiphPxe7uaEyU2So&callback=initMap">
+    src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap">
     </script>
   </body>
 </html>
