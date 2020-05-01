@@ -32,32 +32,30 @@
     <div id="map"></div>
     <div id="capture"></div>
     <script>
-      let map;
-      let src = 'https://raw.githubusercontent.com/aheadcreative/mapstest/master/sticazzi.kml';
-       
+      var map;
+      var src = 'https://raw.githubusercontent.com/aheadcreative/mapstest/master/kml-original.kml';
 
       function initMap() {
         map = new google.maps.Map(document.getElementById('map'), {
-          center: new google.maps.LatLng(-37.871231, 145.245245, 0),
-          zoom: 14,
+          center: new google.maps.LatLng(-19.257753, 146.823688),
+          zoom: 2,
           mapTypeId: 'terrain'
         });
 
-        let kmlLayer = new google.maps.KmlLayer(src, {
+        var kmlLayer = new google.maps.KmlLayer(src, {
           suppressInfoWindows: true,
           preserveViewport: false,
           map: map
         });
         kmlLayer.addListener('click', function(event) {
-          let content = event.featureData.infoWindowHtml;
-          let testimonial = document.getElementById('capture');
+          var content = event.featureData.infoWindowHtml;
+          var testimonial = document.getElementById('capture');
           testimonial.innerHTML = content;
         });
       }
     </script>
-    <script 
+    <script async defer
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDbnfYZa0nQUwlGTtTuiphPxe7uaEyU2So&callback=initMap">
-     </script>
-
+    </script>
   </body>
 </html>
