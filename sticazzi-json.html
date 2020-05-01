@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+    <meta charset="utf-8">
+    <title>KML Click Capture Sample</title>
+    <style>
+      html, body {
+        height: 800px;
+        padding: 6px;
+        margin: 0px;
+        }
+      #map {
+       height: 800px;
+       width: 800px;
+       overflow: hidden;
+       float: left;
+       border: thin solid #333;
+       }
+      #capture {
+       height: 800px;
+       width: 800px;
+       overflow: hidden;
+       float: left;
+       background-color: #ECECFB;
+       border: thin solid #333;
+       border-left: none;
+       }
+    </style>
+  </head>
+  <body>
+    <div id="map"></div>
+    <div id="capture"></div>
+    <script>
+      let map;
+          
+
+      function initMap() {
+        map = new google.maps.Map(document.getElementById('map'), {
+          center: new google.maps.LatLng(-37.871231, 145.245245, 0),
+          zoom: 14,
+          mapTypeId: 'terrain'
+        });
+                // Load GeoJSON.
+                map.data.loadGeoJson(
+            'https://storage.googleapis.com/mapsdevsite/json/google.json');
+
+        // Set the stroke width, and fill color for each polygon
+        map.data.setStyle({
+          fillColor: 'green',
+          strokeWeight: 1
+        });
+
+         // Define the LatLng coordinates for the outer path.
+  var outerCoords = [
+    {lat: -37.871231, lng: 145.245245}, // north west
+    {lat: -37.971231, lng: 145.245245}, // south west
+    {lat: -37.971231, lng: 145.445245}, // south east
+    {lat: -37.871231, lng: 145.445245}  // north east
+  ];
+    
+      }
+    </script>
+    <script 
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDbnfYZa0nQUwlGTtTuiphPxe7uaEyU2So&callback=initMap">
+     </script>
+
+  </body>
+</html>
