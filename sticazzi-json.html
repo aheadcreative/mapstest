@@ -38,12 +38,12 @@
       function initMap() {
         map = new google.maps.Map(document.getElementById('map'), {
           center: new google.maps.LatLng(-37.871231, 145.245245, 0),
-          zoom: 14,
+          zoom: 4,
           mapTypeId: 'terrain'
         });
                 // Load GeoJSON.
                 map.data.loadGeoJson(
-            'https://raw.githubusercontent.com/aheadcreative/mapstest/master/sticazzi.json');
+            'https://raw.githubusercontent.com/aheadcreative/mapstest/master/sticazzi-original.json');
             
         // Set the stroke width, and fill color for each polygon
         map.data.setStyle({
