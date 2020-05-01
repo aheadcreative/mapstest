@@ -33,11 +33,12 @@
     <div id="capture"></div>
     <script>
       let map;
-      let src = '/home/lorenzo/mapstest/sticazzi.kml';
+      let src = 'https://github.com/aheadcreative/mapstest/blob/master/sticazzi.kml';
+       
 
       function initMap() {
         map = new google.maps.Map(document.getElementById('map'), {
-          center: new google.maps.LatLng(-37.871231, 145.245245),
+          center: new google.maps.LatLng(-37.871231, 145.245245, 0),
           zoom: 14,
           mapTypeId: 'terrain'
         });
@@ -54,8 +55,9 @@
         });
       }
     </script>
-    <script async defer
+    <script 
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDbnfYZa0nQUwlGTtTuiphPxe7uaEyU2So&callback=initMap">
-    </script>
+     </script>
+
   </body>
 </html>
