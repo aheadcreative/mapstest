@@ -1,39 +1,44 @@
 <!DOCTYPE html>
 <html>
+
   <head>
     <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
     <meta charset="utf-8">
     <title>KML Click Capture Sample</title>
     <style>
-      html, body {
+      html,
+      body {
         height: 800px;
         padding: 6px;
         margin: 0px;
-        }
+      }
+
       #map {
-       height: 800px;
-       width: 800px;
-       overflow: hidden;
-       float: left;
-       border: thin solid #333;
-       }
+        height: 800px;
+        width: 800px;
+        overflow: hidden;
+        float: left;
+        border: thin solid #333;
+      }
+
       #capture {
-       height: 800px;
-       width: 800px;
-       overflow: hidden;
-       float: left;
-       background-color: #ECECFB;
-       border: thin solid #333;
-       border-left: none;
-       }
+        height: 800px;
+        width: 800px;
+        overflow: hidden;
+        float: left;
+        background-color: #ECECFB;
+        border: thin solid #333;
+        border-left: none;
+      }
     </style>
   </head>
+
   <body>
     <div id="map"></div>
     <div id="capture"></div>
     <script>
       let map;
-          
+
 
       function initMap() {
         map = new google.maps.Map(document.getElementById('map'), {
@@ -41,23 +46,23 @@
           zoom: 4,
           mapTypeId: 'terrain'
         });
-                // Load GeoJSON.
-                map.data.loadGeoJson(
-            'https://raw.githubusercontent.com/aheadcreative/mapstest/master/sticazzi-original.json');
-            
+        // Load GeoJSON.
+        map.data.loadGeoJson(
+          'https://raw.githubusercontent.com/aheadcreative/mapstest/master/sticazzi-original.json');
+
         // Set the stroke width, and fill color for each polygon
         map.data.setStyle({
           fillColor: 'green',
           strokeWeight: 1
         });
 
- 
-    
+
+
       }
     </script>
-    <script 
-    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDbnfYZa0nQUwlGTtTuiphPxe7uaEyU2So&callback=initMap">
-     </script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDbnfYZa0nQUwlGTtTuiphPxe7uaEyU2So&callback=initMap">
+    </script>
 
   </body>
+
 </html>

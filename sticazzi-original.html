@@ -5,27 +5,28 @@
     <meta charset="utf-8">
     <title>KML Click Capture Sample</title>
     <style>
-      html, body {
+      html,
+      body {
         height: 800px;
         padding: 6px;
         margin: 0px;
-        }
+      }
       #map {
-       height: 800px;
-       width: 800px;
-       overflow: hidden;
-       float: left;
-       border: thin solid #333;
-       }
+        height: 800px;
+        width: 800px;
+        overflow: hidden;
+        float: left;
+        border: thin solid #333;
+      }
       #capture {
-       height: 800px;
-       width: 800px;
-       overflow: hidden;
-       float: left;
-       background-color: #ECECFB;
-       border: thin solid #333;
-       border-left: none;
-       }
+        height: 800px;
+        width: 800px;
+        overflow: hidden;
+        float: left;
+        background-color: #fff;
+        border: thin solid #333;
+        border-left: none;
+      }
     </style>
   </head>
   <body>
@@ -38,7 +39,7 @@
 
       function initMap() {
         map = new google.maps.Map(document.getElementById('map'), {
-          center: new google.maps.LatLng(37.426779, -122.094715),
+          center: new google.maps.LatLng(37.42390182131783, -122.0914977709329),
           zoom: 16,
           mapTypeId: 'terrain'
         });
@@ -48,15 +49,16 @@
           preserveViewport: true,
           map: map
         });
-        kmlLayer.addListener('click', function(event) {
+        kmlLayer.addListener('click', function (event) {
           var content = event.featureData.infoWindowHtml;
           var testimonial = document.getElementById('capture');
           testimonial.innerHTML = content;
         });
       }
     </script>
-    <script async defer
-    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDbnfYZa0nQUwlGTtTuiphPxe7uaEyU2So&callback=initMap">
+    
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDbnfYZa0nQUwlGTtTuiphPxe7uaEyU2So&callback=initMap">
     </script>
   </body>
+
 </html>
