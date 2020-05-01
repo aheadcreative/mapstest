@@ -33,7 +33,7 @@
     <div id="capture"></div>
     <script>
       var map;
-      var src = 'https://raw.githubusercontent.com/aheadcreative/mapstest/master/sticazzi-original.kml';
+      var src = 'https://raw.githubusercontent.com/aheadcreative/mapstest/master/kml-original.kml';
 
       function initMap() {
         map = new google.maps.Map(document.getElementById('map'), {
@@ -44,7 +44,7 @@
 
         var kmlLayer = new google.maps.KmlLayer(src, {
           suppressInfoWindows: true,
-          preserveViewport: false,
+          preserveViewport: true,
           map: map
         });
         kmlLayer.addListener('click', function(event) {
