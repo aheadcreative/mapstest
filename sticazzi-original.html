@@ -34,11 +34,12 @@
     <script>
       var map;
       var src = 'https://developers.google.com/maps/documentation/javascript/examples/kml/westcampus.kml';
+      // var src = 'https://raw.githubusercontent.com/aheadcreative/mapstest/master/kml-original.kml';
 
       function initMap() {
         map = new google.maps.Map(document.getElementById('map'), {
-          center: new google.maps.LatLng(-37.871194, 145.245134),
-          zoom: 2,
+          center: new google.maps.LatLng(37.426779, -122.094715),
+          zoom: 16,
           mapTypeId: 'terrain'
         });
 
